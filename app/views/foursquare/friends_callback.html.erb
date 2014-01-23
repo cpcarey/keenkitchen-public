@@ -1,0 +1,29 @@
+<div class="input-group container friends-container">
+  <div class="row">
+    <h1>Select Foursquare Friends</h1>
+  </div>
+
+  <form accept-charset="UTF-8" action="/foursquare/friends_checkins" method="post">
+    <% @friends.each do |friend| %>
+      <div class="row friend-row">
+        <div class="col-xs-12">
+          <span class="input-group-addon">
+            <%= check_box_tag "friend-#{friend['id']}" %>
+          </span>
+          <span class="form-control">
+            <%= friend['firstName'] %> <%= friend['lastName'] %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <%= submit_tag "Submit", :class => "btn btn-primary" %>
+      <%= button_to 'Cancel', {
+        :controller => 'admin',
+        :action => 'login'
+      }, :class => 'btn btn-cancel' %>
+    </div>
+
+  </form>
+</div>

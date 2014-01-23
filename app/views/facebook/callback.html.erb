@@ -1,0 +1,7 @@
+Facebook Check-ins:
+
+<script type="text/javascript">
+  access_token = document.URL.match(/access_token=(.*)&/)[1]
+  host = window.location.href.match(/(http:\/\/[^\/]*)\//)[1]
+  window.location = host + "/facebook/checkins?access_token=" + access_token;
+</script>

@@ -1,0 +1,11 @@
+development:
+  client_id: ''
+  client_secret: ''
+  redirect_uri: 'http://localhost:3000/facebook/callback'
+  checkins_redirect_uri: 'http://localhost:3000/facebook/checkins'
+
+production:
+  client_id: ''
+  client_secret: ''
+  redirect_uri: 'http://keenkitchen.herokuapp.com/facebook/callback'
+  checkins_redirect_uri: 'http://keenkitchen.herokuapp.com/facebook/checkins'

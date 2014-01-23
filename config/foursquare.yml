@@ -1,0 +1,11 @@
+development:
+  client_id: ''
+  client_secret: ''
+  redirect_uri: 'http://localhost:3000/foursquare/callback'
+  friends_redirect_uri: 'http://localhost:3000/foursquare/friends_callback'
+
+production:
+  client_id: ''
+  client_secret: ''
+  redirect_uri: 'http://keenkitchen.herokuapp.com/foursquare/callback'
+  friends_redirect_uri: 'http://keenkitchen.herokuapp.com/foursquare/friends_callback'

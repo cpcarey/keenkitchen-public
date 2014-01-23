@@ -1,0 +1,74 @@
+<div class="container yummly-header">
+  <div class="row title-row">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="recommended-recipes">
+          Your Recommended Recipes
+        </div>
+      </div>
+      <div class="col-md-2">
+        <%= button_to 'Start Over', {
+          :controller => 'admin',
+          :action => 'login'
+        }, :class => 'btn btn-cancel' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <span>Cuisines: &nbsp;</span>
+        <% @categories.each_with_index do |category, index| %>
+          <% if index != 0 %>
+            &nbsp;&middot;&nbsp;
+          <% end %>
+          <span><%= category %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container yummly-container <%= "friends" unless @friends_like_map == {} %>">
+  <% @skewedRecipes.each_with_index do |recipe, i| %>
+    <% if i % 4 == 0 %>
+      <div class="row">
+    <% end %>
+
+    <div class="col-lg-3 col-sm-6 recipe-card-wrapper">
+      <a href="<%= recipe['url'] %>" class="recipe-card-link" target="blank">
+        <div class="recipe-card-inner-wrapper">
+          <div class="recipe-card">
+            <h3 class="recipe-title">
+              <%= recipe['name'] %>
+            </h3>
+            <div class="recipe-extra-info">
+              <div class="recipe-image">
+                <%= image_tag recipe['imageSrc'] %>
+              </div>
+              <div class="recipe-info">
+                <span class="recipe-source"><%= recipe['source'] %></span>
+                <span>&nbsp;&middot;&nbsp;</span>
+                <span class="recipe-rating"><%= recipe['rating'] %>&nbsp;&#9733;</span>
+              </div>
+              <div class="friend-likes">
+                <% if @friends_like_map[recipe['category']] %>
+                  <div class="friend-recommended">Recommended for:</div>
+                  <% @friends_like_map[recipe['category']].each_with_index do |friend, index| %>
+                    <% if index == 2 %>
+                      <div class="friend-like">And <%= @friends_like_map[recipe['category']].length - index %> More</div>
+                    <% elsif index < 2 %>
+                      <div class="friend-like"><%= friend %></div>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <% if i % 4 == 3 %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,31 @@
+<div class="container login">
+  <h1><strong>Keen</strong>Kitchen</h1>
+
+  <p>
+  KeenKitchen is your new, intelligent cookbook. Instead of mulling through
+  hundreds of recipes,  KeenKitchen learns what food you like based on where you 
+  check-in and suggests recipes that are sure to make a fantastic meal for any
+  occasion. Having guests over?  KeenKitchen can take them into consideration too!
+  </p>
+
+  <div class="row">
+    <%= button_to "Use Your Foursquare Check-ins", {
+      controller: 'foursquare',
+      action:     'login'
+    }, { :method => :get, :class => "btn foursquare-button login-button" } %>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <%= button_to "Use Your Friends's Foursquare Check-ins", {
+      controller: 'foursquare',
+      action:     'friends'
+    }, { :method => :get, :class => "btn foursquare-button login-button" } %>
+  </div>
+</div>
+
+<p class="home-paragraph">
+Created using the <a href="http://foursquare.com">Foursquare</a> and
+<a href="http://yummly.com">Yummly</a> APIs.
+</p>

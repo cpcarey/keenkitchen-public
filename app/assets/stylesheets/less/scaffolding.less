@@ -1,0 +1,123 @@
+@import "less/variables";
+
+body {
+  background-color: @base-color;
+  font-family: @sans-font-family;
+  font-size: @base-font-size;
+  font-weight: 300;
+}
+
+.btn {
+  box-shadow: 0 1px 2px #999;
+}
+
+.container {
+  background-color: #fff;
+}
+
+.container.login {
+  box-shadow: @box-shadow;
+  height: 440px;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -220px;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  width: 500px;
+
+  h1 {
+    font-family: @sans-font-family;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  hr {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: auto 20px 10px;
+    text-align: justify;
+  }
+
+  .row {
+    font-size: @base-font-size + 6px;
+    text-align: center;
+  }
+
+  .facebook-button {
+    background-color: @facebook-color;
+  }
+
+  .foursquare-button {
+    background-color: @foursquare-color;
+  }
+
+  .foursquare-button:hover {
+    background-color: lighten(@foursquare-color, 3%);
+  }
+
+  .foursquare-button:active {
+    background-color: lighten(@foursquare-color, 5%);
+  }
+
+  .yummly-button {
+    background-color: @base-color;
+  }
+
+  .login-button {
+    box-shadow: 0 1px 2px #999;
+    color: #fff;
+    display: block;
+    font-size: @base-font-size + 2px;
+    height: 40px;
+    margin: 20px auto 0;
+    padding: 5px;
+    width: 420px;
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.home-paragraph {
+  bottom: 10px;
+  font-size: @base-font-size - 4px;
+  font-weight: bold;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+
+  a {
+    color: #333;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .container.login {
+    position: static;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 300px;
+    height: 580px;
+
+    .row {
+      font-size: @base-font-size;
+    }
+
+    .login-button {
+      width: 200px;
+    }
+  }
+
+  .home-paragraph {
+    margin-top: 40px;
+    position: static;
+  }
+}
